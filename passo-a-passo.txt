@@ -1,0 +1,17 @@
+- O intuito desse programa deve ser a criação de um Cinema e seus filmes disponíveis.
+
+- Inicialmente o "index" deve mostrar cards de filmes disponíveis (Titulo, classificação, duração, sinopse, etc...)
+
+- Ao clicar no card (ou botão, ainda não sei) para assistir o filme, será levado a uma página (não sei se o target blank é uma boa ideia, \*a ver) onde devera escolher seu lugar.
+
+- Pra escolher esse lugar, acho que o mais elegante seria o 'click' na sua respectiva cadeira.
+
+- Inicialmente a cadeira devera estar LIVRE (verde: #4DFF91), ao clicar ela estará no modo RESERVADA (azul/roxo: #293CA9 )
+
+- Em algum local acessível da página deverá ter um botão de confirmar e mostrar a coordenada (fila : X; Assento : 17)
+
+- Após o "confirmar" a cor do acento muda para o modo OCUPADA (vermelho: #F64348 )
+
+- Após o procedimento ser finalizado com sucesso, um modal com um temporarizador exibirá a mensagem "Assento reservado com sucesso. Tenha um bom filme!"
+
+IPC: A ambas as páginas terão seu modo em DARK
