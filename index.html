@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- BOOTSTRAP -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -10,35 +13,303 @@
       crossorigin="anonymous"
     />
 
-    <title>Document</title>
+    <title>Catálogo de Filmes</title>
   </head>
   <body>
     <div class="container">
-      <h1>Teste</h1>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        height="16"
-        width="20"
-        viewBox="0 0 640 512"
-        onclick="meuComportamento()"
-      >
-        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-        <path
-          d="M64 160C64 89.3 121.3 32 192 32H448c70.7 0 128 57.3 128 128v33.6c-36.5 7.4-64 39.7-64 78.4v48H128V272c0-38.7-27.5-71-64-78.4V160zM544 272c0-20.9 13.4-38.7 32-45.3c5-1.8 10.4-2.7 16-2.7c26.5 0 48 21.5 48 48V448c0 17.7-14.3 32-32 32H576c-17.7 0-32-14.3-32-32H96c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V272c0-26.5 21.5-48 48-48c5.6 0 11 1 16 2.7c18.6 6.6 32 24.4 32 45.3v48 32h32H512h32V320 272z"
-          fill="#FF0000"
-        />
-      </svg>
+      <div class="row">
+        <!-- TITULO -->
+        <div class="header text-center mt-4">
+          <h1 class="title">Filmes Disponíveis</h1>
+          <div class="titleline"></div>
+          <div class="subtitle">
+            <p>Veja nossos filmes dísponiveis para o seu entretenimento</p>
+          </div>
+        </div>
+        <!-- CARDS 1/3 -->
+        <div class="row">
+          <div class="card col-md-3" style="margin: 4%; width: 25%">
+            <div class="photo">
+              <img
+                src="./img/barbie.jpg"
+                class="card-img-top"
+                alt="Barbie Poster"
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Barbie</h5>
+              <p class="card-subTitle">
+                Classificação(12) - 2023 ‧ Comédia/Fantasia ‧ 1h 54m
+              </p>
+              <p class="card-description">
+                " Depois de ser banida de Barbieland por não atender aos padrões
+                de beleza, Barbie parte para o mundo humano em busca da
+                verdadeira felicidade, enfrentando desafios e descobrindo o
+                valor da autenticidade."
+              </p>
+            </div>
+            <button class="btnLink" id="btnAnotherPage">
+              <a
+                href="./src/salaCinema.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Garanta Seu Lugar</a
+              >
+            </button>
+          </div>
+          <div class="card col-md-3" style="margin: 4%; width: 25%">
+            <div class="photo">
+              <img
+                src="./img/genteGrande.jpg"
+                class="card-img-top"
+                alt="Gente Grande Poster"
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Gente Grande</h5>
+              <p class="card-subTitle">
+                Classificação(12) - 2010 ‧ Comédia ‧ 1h 42m
+              </p>
+              <p class="card-description">
+                " A morte do treinador de basquete da infância de velhos amigos
+                os reúne no mesmo local onde celebraram um campeonato anos
+                atrás. Os amigos, acompanhados de esposas e filhos, descobrem
+                que a idade não equivale necessariamente à maturidade,
+                enfrentando reflexões sobre a vida."
+              </p>
+            </div>
+            <button class="btnLink" id="btnAnotherPage">
+              <a
+                href="./src/salaCinema.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Garanta Seu Lugar</a
+              >
+            </button>
+          </div>
+          <div class="card col-md-3" style="margin: 4%; width: 25%">
+            <div class="photo">
+              <img
+                src="./img/homemAranha.jpg"
+                class="card-img-top"
+                alt="Homem-Aranha Poster"
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Homem-Aranha: Sem Volta para Casa</h5>
+              <p class="card-subTitle">
+                Classificação(12) - 2021 ‧ Ação/Ficção científica ‧ 2h 28m
+              </p>
+              <p class="card-description">
+                "Peter Parker tem sua identidade secreta revelada e busca ajuda
+                do Doutor Estranho. Quando um feitiço para reverter o evento
+                falha, o Homem-Aranha e seu companheiro dos Vingadores enfrentam
+                inimigos de diferentes universos, desbravando o desafio do
+                multiverso."
+              </p>
+            </div>
+            <button class="btnLink" id="btnAnotherPage">
+              <a
+                href="./src/salaCinema.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Garanta Seu Lugar</a
+              >
+            </button>
+          </div>
+        </div>
+
+        <!-- CARDS 2/3 -->
+        <div class="row">
+          <div class="card col-md-3" style="margin: 4%; width: 25%">
+            <div class="photo">
+              <img
+                src="./img/interestelar.jpg"
+                class="card-img-top"
+                alt="Interestelar Poster"
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Interestelar</h5>
+              <p class="card-subTitle">
+                Classificação(10) - 2014 ‧ Ficção científica/Aventura ‧ 2h 49m
+              </p>
+              <p class="card-description">
+                "As reservas naturais da Terra estão se esgotando, e um grupo de
+                astronautas recebe a missão de encontrar planetas habitáveis.
+                Cooper lidera o grupo, ciente de que pode nunca mais ver os
+                filhos. Ao lado de Brand, Jenkins e Doyle, embarcam em busca de
+                um novo lar para a humanidade."
+              </p>
+            </div>
+            <button class="btnLink" id="btnAnotherPage">
+              <a
+                href="./src/salaCinema.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Garanta Seu Lugar</a
+              >
+            </button>
+          </div>
+          <div class="card col-md-3" style="margin: 4%; width: 25%">
+            <div class="photo">
+              <img
+                src="./img/loboWallStreet.jpg"
+                class="card-img-top"
+                alt="Lobo de Wall Street Poster"
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">O Lobo de Wall Street</h5>
+              <p class="card-subTitle">
+                Classificação(18) - 2013 ‧ Crime/Comédia ‧ 3 horas
+              </p>
+              <p class="card-description">
+                "Jordan Belfort, corretor ambicioso da bolsa, constrói um
+                império enriquecendo de maneira rápida e ilegal. Mergulhando em
+                excessos, ele e seus amigos chamam a atenção da polícia,
+                enfrentando as consequências de seus métodos ilícitos."
+              </p>
+            </div>
+            <button class="btnLink" id="btnAnotherPage">
+              <a
+                href="./src/salaCinema.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Garanta Seu Lugar</a
+              >
+            </button>
+          </div>
+          <div class="card col-md-3" style="margin: 4%; width: 25%">
+            <div class="photo">
+              <img
+                src="./img/perdidoEmMarte.jpg"
+                class="card-img-top"
+                alt="Perdido em Marte Poster"
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Perdido em Marte</h5>
+              <p class="card-subTitle">
+                Classificação(12) - 2015 ‧ Ficção científica/Aventura ‧ 2h 31m
+              </p>
+              <p class="card-description">
+                "O astronauta Mark Watney é enviado a Marte, dado como morto
+                após uma tempestade. Abandonado, ele acorda sozinho no planeta
+                inóspito, iniciando uma luta pela sobrevivência. Utilizando seu
+                conhecimento científico, busca contato e o retorno à Terra,
+                enfrentando desafios extraordinários."
+              </p>
+            </div>
+            <button class="btnLink" id="btnAnotherPage">
+              <a
+                href="./src/salaCinema.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Garanta Seu Lugar</a
+              >
+            </button>
+          </div>
+        </div>
+
+        <!-- CARDS 3/3 -->
+        <div class="row">
+          <div class="card col-md-3" style="margin: 4%; width: 25%">
+            <div class="photo">
+              <img
+                src="./img/sorria.jpg"
+                class="card-img-top"
+                alt="Sorria Poster"
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Sorria</h5>
+              <p class="card-subTitle">
+                Classificação(14) - 2022 ‧ Terror/Mistério ‧ 1h 55m
+              </p>
+              <p class="card-description">
+                " Após testemunhar um suicídio brutal, a psiquiatra Rose é
+                perseguida por uma entidade maligna em constante transformação.
+                Enquanto foge desse pesadelo, Rose enfrenta seu passado
+                conturbado para sobreviver a uma ameaça sobrenatural."
+              </p>
+            </div>
+            <button class="btnLink" id="btnAnotherPage">
+              <a
+                href="./src/salaCinema.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Garanta Seu Lugar</a
+              >
+            </button>
+          </div>
+          <div class="card col-md-3" style="margin: 4%; width: 25%">
+            <div class="photo">
+              <img
+                src="./img/tropaDeElite.jpg"
+                class="card-img-top"
+                alt="Tropa de Elite Poster"
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Tropa de Elite</h5>
+              <p class="card-subTitle">
+                Classificação(16) - 2007 ‧ Crime/Ação ‧ 1h 55m
+              </p>
+              <p class="card-description">
+                " Nascimento, líder da Tropa de Elite do Rio de Janeiro, é
+                encarregado de comandar uma equipe para pacificar o Morro do
+                Turano. Enquanto cumpre as ordens, procura um substituto. Em
+                meio a tiroteios, Nascimento e sua equipe resgatam Neto e
+                Matias, aspirantes a oficiais da PM, que se candidatam ao curso
+                de formação da Tropa de Elite."
+              </p>
+            </div>
+            <button class="btnLink" id="btnAnotherPage">
+              <a
+                href="./src/salaCinema.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Garanta Seu Lugar</a
+              >
+            </button>
+          </div>
+          <div class="card col-md-3" style="margin: 4%; width: 25%">
+            <div class="photo">
+              <img
+                src="./img/vingadoresUltimato.jpg"
+                class="card-img-top"
+                alt="Vingadores Ultimato Poster"
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Vingadores: Ultimato</h5>
+              <p class="card-subTitle">
+                Classificação(12) - 2019 ‧ Ação/Ficção científica ‧ 3h 2m
+              </p>
+              <p class="card-description">
+                "Após Thanos eliminar metade das criaturas vivas, os Vingadores
+                enfrentam a perda de amigos. Com Tony Stark à deriva no espaço,
+                Steve Rogers e Natasha Romanov lideram a resistência contra o
+                titã louco, lutando pela sobrevivência em um mundo devastado."
+              </p>
+            </div>
+            <button class="btnLink" id="btnAnotherPage">
+              <a
+                href="./src/salaCinema.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Garanta Seu Lugar</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <script>
-      function meuComportamento() {
-        // Adicione seu comportamento personalizado aqui
-        alert("SVG clicado! Adicione seu comportamento aqui.");
-      }
-    </script>
   </body>
 </html>

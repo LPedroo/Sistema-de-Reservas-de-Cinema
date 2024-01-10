@@ -1,0 +1,17 @@
+- Estilizar o hover do botão link
+
+- Escolher fonte {
+  IPC: Mesma fonte pra tudo, importante so trocar o tamanho dos texto, sub titulos e titulos
+}
+
+- Escolher um tom branco mais agradável
+
+- *Depois de fazer tudo pare pra analisar pra ver se está 'bonitinho'
+
+
+**ÚTLTIMA COISA**
+-Mexer na responsividade... {
+  Computador: Já está tudo certo
+  Tablet: Tentar deixar igual o do Computador (se possível e agradável)
+  Celular: Deixar os Cards um embaixo do outro mesmo
+}
