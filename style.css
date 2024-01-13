@@ -126,3 +126,16 @@ body,
     margin-bottom: 20px !important; /* Adiciona espaçamento abaixo dos cards */
   }
 }
+
+/* PARTE 2   */
+
+figure {
+  display: inline-block;
+  font-size: 0.7em;
+  margin: 5px;
+}
+
+.poltrona {
+  width: 24;
+  height: 16px;
+}
