@@ -132,10 +132,26 @@ body,
 figure {
   display: inline-block;
   font-size: 0.7em;
-  margin: 5px;
 }
 
 .poltrona {
-  width: 24;
+  width: 24px;
   height: 16px;
+  background-color: #ccc;
+  pointer-events: none;
+}
+
+/* @media screen and (max-width: 768px) {
+  .poltrona {
+    display: block;
+    width: 10px; 
+    height: 10px;
+    margin: 1px; 
+  }
+ 
+} */
+
+.palco-container {
+  overflow: auto;
+  white-space: nowrap; /* Isso evita que as poltronas quebrem para a próxima linha */
 }

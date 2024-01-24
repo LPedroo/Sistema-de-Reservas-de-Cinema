@@ -1,53 +1,50 @@
-const POLTRONAS = 150;
-const POLTRONAS_POR_FILEIRA = 10;
-const COLUNAS = 2;
+const POLTRONAS = 144;
 
 var reservadas = [];
 
 function montarPalco() {
+  var ocupadas = [];
+
+  if (localStorage.getItem("teatroOcupadas")) {
+    ocupadas = localStorage.getItem("teatroOcupadas").split(";");
+  }
+
   var divPalco = document.getElementById("divPalco");
 
   for (var i = 1; i <= POLTRONAS; i++) {
-    var figure = document.createElement("figure");
-    var svgStatus = document.createElementNS(
-      "http://www.w3.org/2000/svg",
-      "svg"
-    );
-    svgStatus.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-    svgStatus.setAttribute("height", "16");
-    svgStatus.setAttribute("width", "20");
-    svgStatus.setAttribute("viewBox", "0 0 640 512");
-    svgStatus.setAttribute("onclick", "meuComportamento()");
+    var figure = document.createElement("figure"); //cria essa tag lá no HTML
+    var imgStatus = document.createElement("img"); //cria essa tag lá no HTML
 
-    var path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-    path.setAttribute(
-      "d",
-      "M64 160C64 89.3 121.3 32 192 32H448c70.7 0 128 57.3 128 128v33.6c-36.5 7.4-64 39.7-64 78.4v48H128V272c0-38.7-27.5-71-64-78.4V160zM544 272c0-20.9 13.4-38.7 32-45.3c5-1.8 10.4-2.7 16-2.7c26.5 0 48 21.5 48 48V448c0 17.7-14.3 32-32 32H576c-17.7 0-32-14.3-32-32H96c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V272c0-26.5 21.5-48 48-48c5.6 0 11 1 16 2.7c18.6 6.6 32 24.4 32 45.3v48 32h32H512h32V320 272z"
-    );
-    path.setAttribute("fill", "#4DFF91");
+    if (ocupadas.indexOf(i.toString()) >= 0) {
+      imgStatus.src = "img/ocupado.jpg";
+    } else {
+      imgStatus.src = "img/livre.jpg";
+    }
+    imgStatus.className = "poltrona"; //classe da imagem
 
-    svgStatus.appendChild(path);
-    svgStatus.className = "poltrona";
+    var figureCap = document.createElement("figcaption"); //cria essa tag lá no HTML
 
-    var figureCap = document.createElement("figcaption");
     var zeros = "";
 
     if (i < 10) {
+      //condição pra exibir zeros na poltrona
       zeros = "00";
     } else if (i < 100) {
       zeros = "0";
     }
-
-    var num = document.createTextNode(`[${zeros} ${i}]`);
+    var num = document.createTextNode(`[${zeros} ${i}]`); //Cria texto
 
     figureCap.appendChild(num);
-    figure.appendChild(svgStatus);
+    figure.appendChild(imgStatus);
     figure.appendChild(figureCap);
 
-    divPalco.appendChild(figure);
+    if (i % 24 == 12) {
+      //Se módulo 24, resta 12 (é o corredor)
+      figure.style.marginRight = "60px";
+    }
+    divPalco.appendChild(figure); //figure é filho de DivPalco
 
-    // Adiciona quebra de linha para iniciar nova fileira
-    if (i % (POLTRONAS_POR_FILEIRA * COLUNAS) == 0 && i < POLTRONAS) {
+    if (i % 24 == 0) {
       var br = document.createElement("br");
       divPalco.appendChild(br);
     }
@@ -55,6 +52,7 @@ function montarPalco() {
 }
 
 montarPalco();
+
 function reservarPoltrona() {
   var poltrona = Number(inPoltrona.value);
 
@@ -78,14 +76,16 @@ function reservarPoltrona() {
   }
 
   var divPalco = document.getElementById("divPalco");
-  var svgPoltrona = divPalco.getElementsByTagName("svg")[poltrona - 1];
 
-  svgPoltrona.getElementsByTagName("path")[0].setAttribute("fill", "#293CA9"); // Modifica a cor do path
+  // captura imagem da poltrona, filha de divPalco. É -1 pois começa em 0
+  var imgPoltrona = divPalco.getElementsByTagName("img")[poltrona - 1];
 
-  reservadas.push(poltrona);
+  imgPoltrona.src = "img/reservado.jpg"; //modifica atributo da imagem
 
-  inPoltrona.value = "";
-  inPoltrona.focus();
+  reservadas.push(poltrona); //Adiciona ao array
+
+  inPoltrona.value = ""; // limpa campo
+  inPoltrona.focus(); // jogo o foco em inPoltrona
 }
 
 var btReservar = document.getElementById("btReservar");
@@ -104,8 +104,8 @@ function confirmarReserva() {
     inPoltrona.focus();
     return;
   }
-
   var divPalco = document.getElementById("divPalco");
+
   var ocupadas = "";
 
   if (localStorage.getItem("teatroOcupadas")) {
@@ -115,12 +115,17 @@ function confirmarReserva() {
   for (var i = 0; i < reservadas.length; i++) {
     ocupadas += `${reservadas[i]} ;`;
 
-    var svgPoltrona = divPalco.getElementsByTagName("svg")[reservadas[i] - 1];
-    svgPoltrona.getElementsByTagName("path")[0].setAttribute("fill", "#F64348");
+    //captura imagem da poltrona, filha de DivPalco. É -1 pq inicia em 0
+    var imgPoltrona = divPalco.getElementsByTagName("img")[reservadas[i] - 1];
+    imgPoltrona.src = "img/ocupado.jpg"; // modifica atributo da imagem;
   }
 
-  reservadas = [];
+  if ((imgPoltrona.src = "img/ocupado.jpg")) {
+    alert("Poltrona Reservada com sucesso! Tenha um bom filme :)");
+  }
+  reservadas = []; //Limpa array (pois as reservas já foram salvas no localStorage)
 
+  //length - 1 é para retirar o último ";"
   localStorage.setItem(
     "teatroOcupadas",
     ocupadas.substr(0, ocupadas.length - 1)
@@ -129,3 +134,17 @@ function confirmarReserva() {
 
 var btConfirmar = document.getElementById("btConfirmar");
 btConfirmar.addEventListener("click", confirmarReserva);
+
+var poltronas = document.querySelectorAll(".poltrona");
+
+poltronas.forEach(function (poltrona) {
+  poltrona.addEventListener("click", function () {
+    reservarPoltrona();
+  });
+
+  // Adicione eventos de toque (touch events) conforme necessário
+  poltrona.addEventListener("touchstart", function (event) {
+    event.preventDefault();
+    reservarPoltrona();
+  });
+});
