@@ -121,7 +121,7 @@ function confirmarReserva() {
   }
 
   if ((imgPoltrona.src = "img/ocupado.jpg")) {
-    alert("Poltrona Reservada com sucesso! Tenha um bom filme :)");
+    alert("Poltrona reservada com sucesso! Tenham um bom filme :)");
   }
   reservadas = []; //Limpa array (pois as reservas já foram salvas no localStorage)
 
@@ -142,7 +142,6 @@ poltronas.forEach(function (poltrona) {
     reservarPoltrona();
   });
 
-  // Adicione eventos de toque (touch events) conforme necessário
   poltrona.addEventListener("touchstart", function (event) {
     event.preventDefault();
     reservarPoltrona();

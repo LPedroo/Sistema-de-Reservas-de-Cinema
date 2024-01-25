@@ -45,9 +45,7 @@ body,
 
 .photo img {
   margin: 2%;
-  /* border: 1px solid #fff; */
   aspect-ratio: 3/4;
-  /* object-fit: cover; */
   padding: 5%;
 }
 
@@ -95,6 +93,47 @@ body,
    ========================================================================== */
 
 /* ==========================================================================
+   SALA DE CINEMA
+   ========================================================================== */
+figure {
+  display: inline-block;
+  font-size: 0.7em;
+}
+
+.poltrona {
+  width: 24px;
+  height: 16px;
+  background-color: #ccc;
+  pointer-events: none;
+}
+
+.palco-container {
+  overflow: auto;
+  white-space: nowrap; /* Isso evita que as poltronas quebrem para a próxima linha */
+}
+
+.legend {
+  margin-left: 50%;
+}
+
+.btn {
+  margin: 3% 1%;
+  border: 2px solid #fff;
+  border-radius: 25px;
+  width: 50%;
+  padding: 5%;
+}
+
+.btn:hover {
+  font-weight: 500;
+  transition: transform 0.5s ease-in-out !important ;
+}
+
+/* ==========================================================================
+   SALA DE CINEMA
+   ========================================================================== */
+
+/* ==========================================================================
    FOOTER SECTION
    ========================================================================== */
 
@@ -107,6 +146,11 @@ body,
 #footer p {
   text-align: center;
 }
+
+/* ==========================================================================
+   FOOTER SECTION
+   ========================================================================== */
+
 /* ==========================================================================
    MEDIA QUERY
    ========================================================================== */
@@ -120,38 +164,25 @@ body,
     margin-bottom: 0%;
   }
   .card {
-    width: 100% !important; /* Altera a largura para ocupar toda a largura disponível */
-    float: none !important; /* Remove o float para que os cards não fiquem lado a lado */
-    margin-right: 0 !important; /* Remove o espaçamento entre os cards */
-    margin-bottom: 20px !important; /* Adiciona espaçamento abaixo dos cards */
+    width: 100% !important;
+    float: none !important;
+    margin-right: 0 !important;
+    margin-bottom: 20px !important;
   }
 }
 
-/* PARTE 2   */
-
-figure {
-  display: inline-block;
-  font-size: 0.7em;
-}
-
-.poltrona {
-  width: 24px;
-  height: 16px;
-  background-color: #ccc;
-  pointer-events: none;
-}
-
-/* @media screen and (max-width: 768px) {
-  .poltrona {
-    display: block;
-    width: 10px; 
-    height: 10px;
-    margin: 1px; 
+@media (max-width: 768px) {
+  .legend {
+    margin: 0%;
   }
- 
-} */
-
-.palco-container {
-  overflow: auto;
-  white-space: nowrap; /* Isso evita que as poltronas quebrem para a próxima linha */
 }
+
+@media (max-width: 1024px) {
+  .btn {
+    width: 65%;
+  }
+}
+
+/* ==========================================================================
+   MEDIA QUERY
+   ========================================================================== */
